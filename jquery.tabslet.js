@@ -45,6 +45,7 @@
     var defaults = {
       mouseevent:   'click',
       activeclass:  'active',
+      visibleclass: 'visible',
       attribute:    'href',
       animation:    false,
       autorotate:   false,
@@ -85,10 +86,10 @@
 
         $this.opts['active'] = $this.opts.deeplinking ? deep_link() : ( $this.data('active') || options.active )
 
-        _tabs.hide();
+        _tabs.removeClass($this.opts.visibleclass);
 
         if ( $this.opts.active ) {
-          _tabs.eq($this.opts.active - 1).show();
+          _tabs.eq($this.opts.active - 1).addClass(options.visibleclass);
           elements.eq($this.opts.active - 1).addClass(options.activeclass);
         }
 
@@ -101,7 +102,12 @@
 
             elements.removeClass(options.activeclass);
             _this.addClass(options.activeclass);
-            _tabs.hide();
+
+            if ($this.opts.animation) {
+              _tabs.hide();
+            } else {
+              _tabs.removeClass(options.visibleclass);
+            }
 
             i = elements.index(_this);
 
@@ -117,7 +123,7 @@
 
             } else {
 
-              _container.find(currentTab).show();
+              _container.find(currentTab).addClass(options.visibleclass);
               _this.trigger('_after');
 
             }
@@ -231,7 +237,7 @@
               $(this).removeClass(options.activeclass);
             });
           _tabs.each( function(i) {
-            $(this).removeAttr('style').css( 'display', _cache_div[i] );
+            $(this).removeClass($this.opts.visibleclass);
           });
         });
 

@@ -19,6 +19,13 @@ $(document).ready(function() {
 		animation: true
 	});
 
+	$('.tabs_animate_custom').tabslet({
+		mouseevent: 'click',
+		attribute: 'href',
+		animation: false,
+		visibleclass: 'visible'
+	});
+
 	$('.tabs_rotate').tabslet({
 		autorotate: true,
 		delay: 3000

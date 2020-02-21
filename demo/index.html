@@ -166,6 +166,32 @@ $('.tabs').tabslet({
 
       <div class="row">
         <div class="twelve columns">
+          <article>
+            <h4>Animation (Custom)</h4>
+<pre data-language="javascript">
+$('.tabs').tabslet({
+  mouseevent: 'click',
+  attribute: 'href',
+  visibleclass: 'visible'
+});
+</pre>
+            <div class='tabs tabs_animate_custom'>
+              <ul class='horizontal'>
+                <li><a href="#tab-1">information</a></li>
+                <li><a href="#tab-2">tab</a></li>
+                <li><a href="#tab-3">tab</a></li>
+              </ul>
+              <div id='tab-1'><span>Change the tab to see that there is an animation.</span></div>
+              <div id='tab-2'><span>Tab 2</span></div>
+              <div id='tab-3'><span>Tab 3</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="twelve columns">
           <article id="rotation">
             <h4>Rotation</h4>
 <pre data-language="javascript">

@@ -167,6 +167,33 @@ FOOTER {
 	text-decoration: none;
 }
 
+[id*="tab-"] {
+	display: none;
+}
+
+.visible {
+	display: block;
+}
+
+.tabs_animate_custom [id*="tab-"] {
+	display: block;
+	opacity: 0;
+	height: 0;
+	margin: 0;
+	visibility: hidden;
+	transform: translateY(10px);
+	transition: opacity .4s ease,
+	            transform .6s ease;
+}
+
+.tabs_animate_custom [id*="tab-"].visible {
+	opacity: 1;
+  height: 100%;
+  visibility: visible;
+	transform: translateY(0);
+	margin-top: 10px;
+}
+
 .tabs LI:hover {
 	background: #a0cac0;
 	border-bottom: 4px solid #68a697;
